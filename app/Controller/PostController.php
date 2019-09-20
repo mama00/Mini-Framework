@@ -7,22 +7,13 @@ class PostController extends AppController
 {
     public function index()
     {
-        
-        
-        $contenu= array();
-        
         $ModelPosts=new Post;
         $toutLesPosts=$ModelPosts->all();
-        while($tt=$toutLesPosts->fetch())
-        {
-            array_push($contenu,$tt['texte']);
-        }
-        View::View('home.html',$contenu);
+        View::View('home.html',$toutLesPosts);
     }
     public function addView()
     {
         View::View('formulaire.html');
-
     }
     public function postFormulaire()
     {
@@ -35,5 +26,12 @@ class PostController extends AppController
             echo $e->getMessage();
         }
     View::View('formulaireSuccess.html');
+    }
+
+    public function voirPost($id)
+    {
+        $post=new Post;
+        $pp=$post->getById((int)$id);
+        View::View('Single.html',$pp);
     }
 }

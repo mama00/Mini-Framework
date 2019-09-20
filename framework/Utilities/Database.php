@@ -9,7 +9,8 @@ class Database
         if(empty(self::$pdo))
         {
             try{
-                self::$pdo=new \PDO('mysql:host=localhost;dbname=testo','root','');
+                $config=require_once __DIR__.'/../../config.php';
+                self::$pdo=new \PDO($config['DbType'].':host='.$config['DbHost'].';dbname='.$config['DbName'],$config['DbUsername'],$config['DbPassword']);
                 self::$pdo->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
             }
             catch(PDOException $e)
