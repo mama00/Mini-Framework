@@ -2,8 +2,8 @@
 require_once __DIR__.'/vendor/autoload.php';
 use Framework\Kernel\AppController;
 
-////Recuperation de l url 
+////Get the URL and paste it to the application controller
 $action=$_GET['action'];
-$app=new AppController();//Creation d'une instance de Votre application 
+$app=new AppController();
 $app->run($action);
 
