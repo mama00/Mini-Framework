@@ -2,14 +2,19 @@
 namespace App\Route;
 
 // Liste des routes de votre application
-return ['index'=>'PostController@index',
+$listRoute= ['index'=>'PostController@index',
         'addView'=>'PostController@addView',
         'postFormulaire'=>'PostController@postFormulaire',
         'voirPost'=>'PostController@voirPost'
     
-    
-    
-    
-    
-    
     ];
+
+// Middleware associe a vos routes
+
+ $listMiddleware=['index'=>[\App\Middleware\testMiddleware::class,
+  \App\Middleware\test2Middleware::class]
+
+
+
+
+ ];

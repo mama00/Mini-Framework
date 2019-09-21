@@ -7,6 +7,7 @@ class View
       
         $urlFinal='app/View/'.$url;
         require_once  $_SERVER['DOCUMENT_ROOT'].'/framework//'.$urlFinal;
+      
     }
    
 }
