@@ -21,5 +21,7 @@ app/Controller is where you can create your controller
 
 You also have the View class which contain the static method View which will call the file indicated in parameter View assume that the base folder is app/View , you can also pass variable to View they will be available as $contenu in the view..
 
+Framework support Middleware you can register your middleware in the same file you register your route. Your middleware must be a class that extends BaseMiddleware as you see in the example in app\Middleware folder. Your class must implement handle() method and finish with the $this->Next($request) in orther to send the request in the chain list.
+
 Thank you for visiting .Feel free to modify everything .this is just for educational purpose
  
