@@ -23,5 +23,8 @@ You also have the View class which contain the static method View which will cal
 
 Framework support Middleware you can register your middleware in the same file you register your route. Your middleware must be a class that extends BaseMiddleware as you see in the example in app\Middleware folder. Your class must implement handle() method and finish with the $this->Next($request) in orther to send the request in the chain list.
 
+Envent are also supported now create and Event class and activate it with EventManager
+create event in app\Event\Event folder and listener in app\Event\Listener and register your event in serviceProvider\EventServiceProvider.php
+
 Thank you for visiting .Feel free to modify everything .this is just for educational purpose
  

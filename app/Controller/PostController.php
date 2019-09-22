@@ -5,7 +5,8 @@ namespace App\Controller;
 use Framework\Kernel\AppController;
 use Framework\Kernel\Utilities\Functions\View;
 use App\Model\Post;
-
+use Framework\Kernel\EventManager;
+use App\Event\Event\EvenementTest;
 
 class PostController extends AppController
 {
@@ -14,13 +15,12 @@ class PostController extends AppController
        
         $ModelPosts=new Post;
         $toutLesPosts=$ModelPosts->all();
-       
         View::View('home.html',$toutLesPosts);
         
     }
     public function addView()
     {
-     
+        EventManager::Event(new EvenementTest);
         View::View('formulaire.html');
     }
     public function postFormulaire()

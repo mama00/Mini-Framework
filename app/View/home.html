@@ -8,9 +8,9 @@
 </head>
 <body>
     <?php foreach($contenu as $cont ) { ?>
-        <h1><a href='<?php echo "index?action=voirPost@".$cont[0] ?>'> <?php  echo $cont['texte']  ?> </a> </h1>
+        <h1><a href='<?php echo "voirPost@".$cont[0] ?>'> <?php  echo $cont['texte']  ?> </a> </h1>
     <?php } ?>
 
-    <h3><a href='index?action=addView'>Ajouter un autre</a></h3>
+    <h3><a href='addView'>Ajouter un autre</a></h3>
 </body>
 </html>

@@ -1,9 +1,9 @@
 <?php 
 require_once __DIR__.'/vendor/autoload.php';
 use Framework\Kernel\AppController;
+use Framework\Kernel\Route;
 
-////Get the URL and paste it to the application controller
-$action=$_GET['action'];
+$url=Route::getUrl();////Get the URL and paste it to the application controller
 $app=new AppController();
-$app->run($action);
+$app->run($url);
 
