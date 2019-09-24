@@ -1,0 +1,10 @@
+<?php 
+
+require_once __DIR__.'/vendor/autoload.php';
+
+use Framework\Kernel\Fm\Fm;
+
+$fmInstance=new Fm();
+$fmInstance->handle($argc,$argv);
+
+?>

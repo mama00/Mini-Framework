@@ -26,5 +26,17 @@ Framework support Middleware you can register your middleware in the same file y
 Envent are also supported now create and Event class and activate it with EventManager
 create event in app\Event\Event folder and listener in app\Event\Listener and register your event in serviceProvider\EventServiceProvider.php
 
+Now with the Help of fm you will be able to generate all File you need with just a command.
+fm is a command line tools which help you build fast code.
+
+you can generate model,controller,middleware,event,listener like this
+php fm make:model yourmodelname 
+php fm make:middleware yourmiddleware
+php fm make:controller yourcontroller
+php fm make:event yourevent
+php fm make:listener yourlistener 
+
+dont add the .php fm will do it for you :)
+
 Thank you for visiting .Feel free to modify everything .this is just for educational purpose
  
