@@ -60,3 +60,31 @@ class $filename extends BaseEvent
 {
     //TODO your code
 }";
+
+$request="<?php
+namespace App\Request;
+
+use Framework\Kernel\FormRequest\BaseFormRequest;
+
+class $filename extends BaseFormRequest
+{
+    protected \$redirectTo=''; //redirect to if the form request fail
+
+    public function authorize()
+    {
+        return true;// authorize the request 
+    }
+
+    public function rules()
+    {
+        return [
+                    //TODO write your rule like 'texte'=>'required'
+            ];
+    }
+    public function messages()
+    {
+        return [
+                    //TODO write your message like 'texte.required'=>'this text is required'
+        ];
+    }
+}";

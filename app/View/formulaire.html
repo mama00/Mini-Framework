@@ -7,11 +7,18 @@
     <title>Document</title>
 </head>
 <body>
+    <?php 
+    if(isset($errors))
+    {
+        foreach($errors as $error)
+            echo $error.PHP_EOL;
+    }
+    ?>
     <form action="postFormulaire" method="post">
         <label for="titre">Titre:</label>
-        <input type="text" id='titre' name='titre'>
+        <input type="text" id='titre' name='titre' value='<?php echo $old["titre"] ?? ""?>'>
         <label for="texte">Texte:</label>
-        <input type="text" id='texte' name='texte'>
+        <input type="text" id='texte' name='texte' value='<?php echo $old["texte"] ?? ""?>'>
         <input type='submit' value='submit'>
     </form>
 </body>

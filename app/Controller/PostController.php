@@ -7,15 +7,16 @@ use Framework\Kernel\Utilities\Functions\View;
 use App\Model\Post;
 use Framework\Kernel\EventManager;
 use App\Event\Event\EvenementTest;
+use App\Request\FormRequest;
 
 class PostController extends AppController
 {
     public function index()
     {
-       
         $ModelPosts=new Post;
-        $toutLesPosts=$ModelPosts->all();
-        View::View('home.html',$toutLesPosts);
+        $contenu=$ModelPosts->all();
+       
+        View::View('home.html',compact('contenu'));
         
     }
     public function addView()
@@ -25,6 +26,8 @@ class PostController extends AppController
     }
     public function postFormulaire()
     {
+        $validation=new FormRequest;
+        $validation->validate($this->request);
         try{
           
             Post::query('INSERT INTO posts (created_at,updated_at,titre,texte) VALUES(?,?,?,?)',array(date('Y-m-d H:i:s')
@@ -41,6 +44,6 @@ class PostController extends AppController
     {
         $post=new Post;
         $pp=$post->getById((int)$id);
-        View::View('Single.html',$pp);
+        View::View('Single.html',compact('pp'));
     }
 }

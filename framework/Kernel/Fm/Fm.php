@@ -70,6 +70,30 @@ class Fm
                     die;
                 }
                 break;
+                case 'request':
+                if(!file_exists(__DIR__.'/../../../app/Request/'.$filename.'.php'))
+                {
+                    $fichier=fopen(__DIR__.'/../../../app/Request/'.$filename.'.php','a');
+                    $template=$request;
+                }
+                else 
+                {
+                    echo 'File already exist';
+                    die;
+                }
+                break;
+                case 'model':
+                if(!file_exists(__DIR__.'/../../../app/Model/'.$filename.'.php'))
+                {
+                    $fichier=fopen(__DIR__.'/../../../app/Model/'.$filename.'.php','a');
+                    $template=$model;
+                }
+                else 
+                {
+                    echo 'File already exist';
+                    die;
+                }
+                break;
                 default :
                 echo 'invalid command';
                 die;
