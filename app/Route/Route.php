@@ -5,7 +5,8 @@ namespace App\Route;
     $listRoute= ['index'=>'PostController@index',
                 'addView'=>'PostController@addView',
                 'postFormulaire'=>'PostController@postFormulaire',
-                'voirPost'=>'PostController@voirPost'
+                'voirPost'=>'PostController@voirPost',
+                'template'=>'Test@tt'
                 ];
 
     // Middleware associe a vos routes

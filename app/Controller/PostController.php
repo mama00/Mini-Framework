@@ -12,12 +12,8 @@ use App\Request\FormRequest;
 class PostController extends AppController
 {
     public function index()
-    {
-        $ModelPosts=new Post;
-        $contenu=$ModelPosts->all();
-       
-        View::View('home.html',compact('contenu'));
-        
+    {    
+        View::View('home.html'); 
     }
     public function addView()
     {
